@@ -3,5 +3,18 @@
 
     <string name="hello">Hello World, IgrejaActivity!</string>
     <string name="app_name">Igreja</string>
+    <string name="btnGravar">Gravar</string>
+    <string name="helpEditFuncaoConvidado">Digite a função do convidado</string>
+    <string name="lblFuncao">Função: </string>
+    <string name="helpEditOrigemConvidado">Digite a origem do convidado</string>
+    <string name="lblOrigem">Origem: </string>
+    <string name="helpEditTelefoneConvidado">Digite o telefone do convidado</string>
+    <string name="lblTelefone">Telefone: </string>
+    <string name="helpEditMailConvidado">Digite o email do convidado</string>
+    <string name="lblMail">Email: </string>
+    <string name="helpEditNomeConvidado">Digite o nome do convidado</string>
+    <string name="lblNome">Nome: </string>
+    <string name="messageInsertSuccess">Registro inserido com sucesso! </string>
+    <string name="messageInsertFail">Falha na inclusão de registro. </string>
 
 </resources>

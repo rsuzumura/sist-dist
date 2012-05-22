@@ -1,6 +1,7 @@
 package br.fatec.igreja;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,6 +16,16 @@ public class IgrejaActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Button btnGo = (Button)findViewById(R.id.button1);
+        btnGo.setOnClickListener(new OnClickListener() {			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent it = new Intent("FATEC_CONVIDADO");
+	    		it.addCategory("BR_FATECSP");
+	    		startActivity( it );
+			}
+		});
+        
         Button btnSet = (Button)findViewById(R.id.btnSet);
         btnSet.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -24,7 +35,13 @@ public class IgrejaActivity extends Activity {
 					EditText idConvidado 	= (EditText)findViewById(R.id.idConvidado);
 					TextView resultXML 		= (TextView)findViewById(R.id.resultXML);
 					
-					c.idConvidado = Integer.parseInt(idConvidado.getText().toString());
+					//c.idConvidado = Integer.parseInt(idConvidado.getText().toString());
+					c.method = 2;
+					c.nome = "Teste de inclusão via Web Service";
+					c.email = "teste@teste.com";
+					c.funcao = "vagabundo";
+					c.origem = "nenhum";
+					c.telefone = "012331231";
 					c.join();
 					c.start();
 					while (rslt == "START") {
