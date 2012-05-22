@@ -45,22 +45,27 @@ public class CallSoap {
         }
     }
     
-    /*public Convidado Get(int idConvidado) {
-        SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
-        //request.addProperty("idConvidado", idConvidado);
- 
+    public String Insert(String nome, String email, String telefone, String origem, String funcao) {
+    	String retorno = null;
+    	SoapObject request = new SoapObject(NAMESPACE, "InsertCliente");
+    	request.addProperty("nome", nome);
+    	request.addProperty("email", email);
+    	request.addProperty("telefone", telefone);
+    	request.addProperty("origem", origem);
+    	request.addProperty("funcao", funcao);
+    	 
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.dotNet = true;
         envelope.setOutputSoapObject(request);
         try {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
-            androidHttpTransport.call(SOAP_ACTION, envelope);
-            SoapObject result = (SoapObject) envelope.getResponse();
-            Convidado c = new Convidado();
-            //c.idConvidado = result.
-            return c;
+            androidHttpTransport.call("http://tempuri.org/InsertCliente", envelope);
+            SoapPrimitive result = (SoapPrimitive) envelope.getResponse();
+            retorno = result.toString();
         } catch (Exception e) {
             return e.getMessage();
         }
-    }*/
+    	
+    	return retorno;
+    }
 }
