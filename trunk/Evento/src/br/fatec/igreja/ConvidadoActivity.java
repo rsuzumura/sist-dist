@@ -1,5 +1,6 @@
-package br.fatec.igreja;
+package br.fatec.evento;
 
+import br.fatec.evento.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;

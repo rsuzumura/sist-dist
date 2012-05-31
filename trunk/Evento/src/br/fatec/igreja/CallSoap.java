@@ -1,4 +1,4 @@
-package br.fatec.igreja;
+package br.fatec.evento;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -6,7 +6,7 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-import br.fatec.igreja.classes.Convidado;
+import br.fatec.evento.classes.Convidado;
  
 public class CallSoap {
     private static final String SOAP_ACTION = "http://tempuri.org/List";
