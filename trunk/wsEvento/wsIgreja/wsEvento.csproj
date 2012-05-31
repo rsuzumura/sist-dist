@@ -10,7 +10,7 @@
     <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>wsIgreja</RootNamespace>
+    <RootNamespace>wsEvento</RootNamespace>
     <AssemblyName>wsIgreja</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
@@ -79,8 +79,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SqlResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="wsIgreja.asmx.cs">
-      <DependentUpon>wsIgreja.asmx</DependentUpon>
+    <Compile Include="wsEvento.asmx.cs">
+      <DependentUpon>wsEvento.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -108,7 +108,7 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="wsIgreja.asmx" />
+    <Content Include="wsEvento.asmx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SqlResources.resx">
