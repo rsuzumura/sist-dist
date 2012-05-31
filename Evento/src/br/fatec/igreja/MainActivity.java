@@ -1,5 +1,6 @@
-package br.fatec.igreja;
+package br.fatec.evento;
 
+import br.fatec.evento.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class IgrejaActivity extends Activity {
+public class MainActivity extends Activity {
 	public static String rslt = "";
     /** Called when the activity is first created. */
     @Override

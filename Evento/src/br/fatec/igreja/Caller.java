@@ -1,4 +1,4 @@
-package br.fatec.igreja;
+package br.fatec.evento;
 
 public class Caller extends Thread{
 	public CallSoap cs;
@@ -17,7 +17,7 @@ public class Caller extends Thread{
 			switch (method) {
 			case 1:
 				resp = cs.Call(idConvidado);
-				IgrejaActivity.rslt = resp;
+				MainActivity.rslt = resp;
 				break;
 			case 2:
 				resp = cs.Insert(nome, email, telefone, origem, funcao);
@@ -25,7 +25,7 @@ public class Caller extends Thread{
 				break;
 			}
 		} catch(Exception ex) {
-			IgrejaActivity.rslt = ex.toString();
+			MainActivity.rslt = ex.toString();
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package br.fatec.igreja.classes;
+package br.fatec.evento.classes;
 
 public class Convidado {
 	public int idConvidado;
