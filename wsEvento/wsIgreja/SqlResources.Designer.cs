@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wsIgreja {
+namespace wsEvento {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace wsIgreja {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("wsIgreja.SqlResources", typeof(SqlResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("wsEvento.SqlResources", typeof(SqlResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

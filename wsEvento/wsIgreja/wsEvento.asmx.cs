@@ -8,7 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Xml.Serialization;
 
-namespace wsIgreja
+namespace wsEvento
 {
     //[XmlRoot("Convidado")]
     public class Convidado
