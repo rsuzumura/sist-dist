@@ -1,0 +1,33 @@
+o que eu preciso???
+
+* -> exigem cadastros e webservices específicos
+
+----- DEMAIS -----
+nome do convidado
+e-mail
+telefone
+origem*
+função*
+
+
+----- EVENTO -----
+nome
+data início
+data fim
+hora início
+hora fim
+local
+responsável
+tipo evento
+status
+
+
+----- TIPO -------
+casamento
+batizado
+aniversário
+despedida de solteiro
+chá de bebê
+reuniões religiosas
+velório
+Lista de convidados (recepção de convidados)

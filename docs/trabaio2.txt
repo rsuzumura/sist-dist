@@ -1,0 +1,16 @@
+WebService
+    para cada cadastro 
+        incluir
+        alterar
+        excluir
+        consultar
+        busca lista
+
+Cadastros  
+    Convidados
+    Eventos
+    Funções
+    Tipo de Evento
+
+Configuração
+    
