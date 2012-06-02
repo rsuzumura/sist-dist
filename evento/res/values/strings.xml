@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Evento</string>
+
+	<!-- texto de label dos botões principais na navegação  -->
+    <string name="hello">Menu Principal</string>
+    <string name="btnAcoes"> Ações/Evento </string>
+    <string name="btnAdmin"> Gerenciar </string>
+    
+    <string name="hello2">Menu de Eventos</string>
+    <string name="btnConvidado"> Convidado </string>
+    <string name="btnEvento"> Eventos </string>
+
+    <string name="hello3">Menu de Gerencial</string>
+    <string name="btnTipoEvento"> Tipo Evento </string>
+    <string name="btnFuncoes"> Funções </string>
+    
+    <string name="menuConfig"> Menu de Configurações </string>
+    <string name="lblNomeEmpresa"> Nome da Empresa </string>
+    
+    <!--  Fim dos recursos utilizados de forma básica nas telas  -->
+    <string name="btnGravar">Gravar</string>
+    <string name="helpEditFuncaoConvidado">Digite a função do convidado</string>
+    <string name="lblFuncao">Função: </string>
+    <string name="helpEditOrigemConvidado">Digite a origem do convidado</string>
+    <string name="lblOrigem">Origem: </string>
+    <string name="helpEditTelefoneConvidado">Digite o telefone do convidado</string>
+    <string name="lblTelefone">Telefone: </string>
+    <string name="helpEditMailConvidado">Digite o email do convidado</string>
+    <string name="lblMail">Email: </string>
+    <string name="helpEditNomeConvidado">Digite o nome do convidado</string>
+    <string name="lblNome">Nome: </string>
+    <string name="messageInsertSuccess">Registro inserido com sucesso! </string>
+    <string name="messageInsertFail">Falha na inclusão de registro. </string>
+	
+</resources>
