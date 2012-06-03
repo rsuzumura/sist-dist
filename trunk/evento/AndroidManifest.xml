@@ -9,15 +9,77 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
+        <!-- janela inicial para filtro das ações gerenciais e de operação -->
         <activity
             android:name=".mainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+        <!-- seleção entre Eventos ou Convidados -->
+        <activity 
+            android:name=".AcoesActivity">
+            <intent-filter>
+                <action android:name="EVENTO_ACOES" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- cadastro de tipos de evento e funções -->
+        <activity 
+            android:name=".AdminActivity">
+            <intent-filter>
+                <action android:name="EVENTO_ADMIN" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- janela de configurações -->
+        <activity 
+            android:name=".ConfigActivity">
+            <intent-filter>
+                <action android:name="EVENTO_CONFIG" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- janela de Recepcao -->
+        <activity 
+            android:name=".RecepcaoActivity">
+            <intent-filter>
+                <action android:name="EVENTO_RECEPCAO" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- janela para convidado -->
+        <activity 
+            android:name=".ConvidadoActivity">
+            <intent-filter>
+                <action android:name="EVENTO_CONVIDADO" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- janela para evento -->
+        <activity 
+            android:name=".EventoActivity">
+            <intent-filter>
+                <action android:name="EVENTO_EVENTO" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>
