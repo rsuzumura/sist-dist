@@ -11,6 +11,12 @@
         android:text="@string/hello2" />
 
     <Button
+        android:id="@+id/btnRecepcao"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btnRecepcao" />
+
+    <Button
         android:id="@+id/btnConvidado"
         android:layout_width="170dp"
         android:layout_height="wrap_content"

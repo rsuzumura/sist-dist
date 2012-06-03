@@ -11,6 +11,7 @@
     <string name="hello2">Menu de Eventos</string>
     <string name="btnConvidado"> Convidado </string>
     <string name="btnEvento"> Eventos </string>
+    <string name="btnRecepcao"> Recepcao Convidados </string>
 
     <string name="hello3">Menu de Gerencial</string>
     <string name="btnTipoEvento"> Tipo Evento </string>
@@ -18,6 +19,8 @@
     
     <string name="menuConfig"> Menu de Configurações </string>
     <string name="lblNomeEmpresa"> Nome da Empresa </string>
+    
+	<string name="txtRecepcao"> Recepcao </string>
     
     <!--  Fim dos recursos utilizados de forma básica nas telas  -->
     <string name="btnGravar">Gravar</string>
