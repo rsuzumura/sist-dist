@@ -4,19 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical" > 
 
+	<include layout="@layout/comandos"/>
+
 	<TableLayout
 		android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-
-	    <TableRow
-	        android:id="@+id/tableRow6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-	        
-	        
-	        
-	    </TableRow>
-	        
+	
         <TableRow
             android:id="@+id/tableRow5"
             android:layout_width="wrap_content"
