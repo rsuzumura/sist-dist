@@ -2,24 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@android:color/darker_gray">
 
     <TextView
         android:id="@+id/txtHello"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:text="@string/hello"
+        android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/btnEvento" 
-        android:layout_width="160dp"
+    <TextView
+        android:id="@+id/btnConvidado"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnAcoes"/>
+        android:text="@string/btnConvidado"
+        android:clickable="true"
+        android:textSize="40dp"
+        android:layout_gravity="bottom"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/divisor"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/btnEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnEvento"
+        android:clickable="true"
+        android:textSize="40dp"
+        android:layout_gravity="bottom"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/divisor"
+        android:textColor="@android:color/white" />
+    
+    <TextView
         android:id="@+id/btnAdmin"
-        android:layout_width="161dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnAdmin" />
+        android:text="@string/btnAdmin"
+        android:clickable="true"
+        android:textSize="40dp"
+        android:layout_gravity="bottom"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/divisor"
+        android:textColor="@android:color/white" />
+    
 </LinearLayout>

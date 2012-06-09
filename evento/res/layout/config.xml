@@ -26,4 +26,18 @@
         <requestFocus />
     </EditText>
 
+    <TextView
+        android:id="@+id/lblWebService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblWebService" />
+
+    <EditText
+        android:id="@+id/txtWebService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" >
+        <requestFocus />
+    </EditText>
 </LinearLayout>
