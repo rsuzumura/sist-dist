@@ -11,7 +11,7 @@ public class ConvidadoActivity extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro_convidado);
+        setContentView(R.layout.convidado);
     }
     
     public void onClick(View v) {

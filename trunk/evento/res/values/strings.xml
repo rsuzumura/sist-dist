@@ -5,11 +5,11 @@
 
 	<!-- texto de label dos botões principais na navegação  -->
     <string name="hello">Menu Principal</string>
-    <string name="btnAcoes"> Ações/Evento </string>
-    <string name="btnAdmin"> Gerenciar </string>
+    <string name="btnConvidado"> Convidado </string>
+    <string name="btnAcoes"> Eventos </string>
+    <string name="btnAdmin"> Parametros </string>
     
     <string name="hello2">Menu de Eventos</string>
-    <string name="btnConvidado"> Convidado </string>
     <string name="btnEvento"> Eventos </string>
     <string name="btnRecepcao"> Recepcao Convidados </string>
 
@@ -21,7 +21,11 @@
     <string name="lblNomeEmpresa"> Nome da Empresa </string>
     
 	<string name="txtRecepcao"> Recepcao </string>
+	
+	<string name="lblWebService"> URL Web Service </string>
     
+	<string name="divisor">__________________________________________</string>
+	
     <!--  Fim dos recursos utilizados de forma básica nas telas  -->
     <string name="btnGravar">Gravar</string>
     <string name="helpEditFuncaoConvidado">Digite a função do convidado</string>
