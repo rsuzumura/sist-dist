@@ -9,7 +9,7 @@
         android:id="@+id/txtHello"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello"
+        android:text="Nome Empresa"
         android:textColor="@android:color/white" />
 
     <TextView
