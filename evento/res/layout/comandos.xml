@@ -2,104 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+	android:background="@android:color/darker_gray">
     
 	<TableLayout
 		android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent" >
         
-	    <TableRow
-	        android:id="@+id/tableRow6"
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+	    <TextView
+	        android:id="@+id/txtTitulo"
 	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent" >
-
-		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
-		    android:layout_width="wrap_content"  
-		    android:layout_height="wrap_content"  
-		    android:padding="5dp"  
-		    android:layout_marginBottom="1dp"
-		    android:clickable="true"
-	        android:background="@android:color/black"
-	        android:id="@+id/search">
-		        <ImageView 
-		            android:src="@drawable/search"
-		            android:background="@android:color/black"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:clickable="true"/>
-		</RelativeLayout>
-		
-		<RelativeLayout
-		    xmlns:android="http://schemas.android.com/apk/res/android"
-		    android:id="@+id/btnEdit"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_marginBottom="1dp"
-		    android:background="@android:color/black"
-		    android:clickable="true"
-		    android:padding="5dp" >
-
-		    <ImageView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:clickable="true"
-		        android:src="@drawable/edit" />
-
-		</RelativeLayout>
-
-		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
-		    android:layout_width="wrap_content"  
-		    android:layout_height="wrap_content"  
-		    android:padding="5dp"  
-		    android:layout_marginBottom="1dp"
-		    android:clickable="true"
-	        android:background="@android:color/black"
-	        android:id="@+id/btnLixo">
-		    
-		    <ImageView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_centerHorizontal="true"
-		        android:background="@android:color/black"
-		        android:clickable="true"
-		        android:src="@drawable/lixo" />
-		</RelativeLayout>
-
-		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
-		    android:layout_width="wrap_content"  
-		    android:layout_height="wrap_content"  
-		    android:padding="5dp"  
-		    android:layout_marginBottom="1dp"
-		    android:clickable="true"
-	        android:background="@android:color/black"
-	        android:id="@+id/btnOk">
-		    
-		    <ImageView
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:background="@android:color/black"
-		        android:clickable="true"
-		        android:src="@drawable/ok" />
-		</RelativeLayout>
-
-		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
-		    android:layout_width="wrap_content"  
-		    android:layout_height="wrap_content"  
-		    android:padding="5dp"  
-		    android:layout_marginBottom="1dp"
-		    android:clickable="true"
-	        android:background="@android:color/black"
-	        android:id="@+id/btnCancel">
-
+	        android:layout_height="wrap_content"
+	        android:text="@string/lblTitulo"
+	        android:clickable="true"
+	        android:textSize="35dp"
+	        android:layout_gravity="bottom"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
 		<ImageView
+		    android:id="@+id/btnInsert"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:background="@android:color/black"
 		    android:clickable="true"
-		    android:src="@drawable/cancel" />
-		</RelativeLayout>
+		    android:layout_gravity="right"
+		    android:src="@drawable/add" />
 		
 	    </TableRow>
+	</TableLayout>
+	
+	<TableLayout
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/divisor"
+	        android:textColor="@android:color/white" />
+    	</TableRow>
 	</TableLayout>
     
 </LinearLayout>

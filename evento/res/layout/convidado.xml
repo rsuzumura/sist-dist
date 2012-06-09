@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" > 
+    android:orientation="vertical" 
+    android:background="@android:color/darker_gray">
 
 	<include layout="@layout/comandos"/>
 
@@ -10,23 +11,17 @@
 		android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 	
-        <TableRow
-            android:id="@+id/tableRow5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lblNome" />
+      <TableRow
+          android:id="@+id/tableRow5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" >
 
             <EditText
                 android:id="@+id/editNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/helpEditNomeConvidado" />
+                android:hint="@string/lblNome" />
 
         </TableRow>
 
@@ -34,18 +29,13 @@
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lblMail" />
             
             <EditText
                 android:id="@+id/editMail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-				android:hint="@string/helpEditMailConvidado">
+				android:hint="@string/lblMail">
                 <requestFocus />
             </EditText>
 
@@ -55,34 +45,26 @@
             android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lblTelefone" />
+
             <EditText
                 android:id="@+id/editPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/helpEditTelefoneConvidado" />
+                android:hint="@string/lblTelefone" />
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lblOrigem" />
+
             <EditText
                 android:id="@+id/editOrigem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/helpEditOrigemConvidado" />
+                android:hint="@string/lblOrigem" />
 
         </TableRow>
 
@@ -90,17 +72,13 @@
             android:id="@+id/tableRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lblFuncao" />
+
             <EditText
                 android:id="@+id/editFuncao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/helpEditFuncaoConvidado" />
+                android:hint="@string/lblFuncao" />
 
         </TableRow>
     </TableLayout>

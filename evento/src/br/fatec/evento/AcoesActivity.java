@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.TextView;
 
 
 public class AcoesActivity extends Activity implements OnClickListener {
@@ -15,13 +15,10 @@ public class AcoesActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acoes);
         
-        Button btnRecepcao = (Button) findViewById(R.id.btnRecepcao);
-        btnRecepcao.setOnClickListener(this);
-        
-        Button btnConvidado = (Button) findViewById(R.id.btnConvidado);
+        TextView btnConvidado = (TextView) findViewById(R.id.btnConvidado);
         btnConvidado.setOnClickListener(this);
         
-        Button btnEvento = (Button) findViewById(R.id.btnEvento);
+        TextView btnEvento = (TextView) findViewById(R.id.btnEvento);
         btnEvento.setOnClickListener(this);
     }
     
@@ -33,16 +30,13 @@ public class AcoesActivity extends Activity implements OnClickListener {
     		it.addCategory("BR_FATECSP");
     		startActivity( it );
     		break;
+
     	case R.id.btnEvento :
     		it = new Intent("EVENTO_EVENTO");
     		it.addCategory("BR_FATECSP");
     		startActivity( it );
     		break;
-    	case R.id.btnRecepcao :
-    		it = new Intent("EVENTO_RECEPCAO");
-    		it.addCategory("BR_FATECSP");
-    		startActivity( it );
-    		break;
+
     	}
     }
 }
