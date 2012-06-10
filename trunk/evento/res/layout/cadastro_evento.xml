@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@android:color/darker_gray"
+    android:paddingLeft="10dp">
+
+    <include layout="@layout/comandos"/>
+    
+	<TableLayout
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+	
+      <TableRow
+          android:id="@+id/tableRow1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/txtNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblEvento" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <EditText
+                android:id="@+id/txtMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+				android:hint="@string/lblLocal">
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/txtResponsavel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblResponsavel" />
+        </TableRow>
+
+	</TableLayout>
+	<TableLayout 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/txtDataInicial"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:inputType="date" 
+                android:hint="@string/lblDataInicio"/>
+            
+            <EditText
+                android:id="@+id/txtDataFinal"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:inputType="date" 
+                android:paddingLeft="5dp"
+                android:hint="@string/lblDataFinal"/>
+
+        </TableRow>
+
+    </TableLayout>
+	<TableLayout 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+	    <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Spinner 
+                android:id="@+id/listaStatus"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+				android:entries="@array/listaStatus"/>
+            
+       </TableRow>
+       
+	    <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Spinner 
+                android:id="@+id/listaTipoEventos"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"/>
+            
+       </TableRow>
+       
+	    <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:paddingLeft="25dp">
+            
+	        <Button 
+				android:id="@+id/btnAssociar"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/btnAssociar" />
+	        
+		</TableRow>
+    </TableLayout>
+
+    <Button
+       android:id="@+id/btnEditar"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+       android:text="@string/btnEditar" 
+       android:layout_gravity="right"/>
+
+</LinearLayout>

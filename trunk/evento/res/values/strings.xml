@@ -24,18 +24,39 @@
 	<string name="divisor">________________________________________________</string>
 	
     <!--  Fim dos recursos utilizados de forma básica nas telas  -->
+    <!--  Recursos usados na gravação/edição dos registros de convidados -->
     <string name="btnGravar">Gravar</string>
-    <string name="helpEditFuncaoConvidado">Digite a função do convidado</string>
-    <string name="lblFuncao">Função: </string>
-    <string name="helpEditOrigemConvidado">Digite a origem do convidado</string>
-    <string name="lblOrigem">Origem: </string>
-    <string name="helpEditTelefoneConvidado">Digite o telefone do convidado</string>
-    <string name="lblTelefone">Telefone: </string>
-    <string name="helpEditMailConvidado">Digite o email do convidado</string>
-    <string name="lblMail">Email: </string>
-    <string name="helpEditNomeConvidado">Digite o nome do convidado</string>
-    <string name="lblNome">Nome: </string>
+    <string name="lblFuncao">Funcao </string>
+    <string name="lblOrigem">Origem </string>
+    <string name="lblTelefone">Telefone </string>
+    <string name="lblMail">Email </string>
+    <string name="lblNome">Nome </string>
     <string name="messageInsertSuccess">Registro inserido com sucesso! </string>
     <string name="messageInsertFail">Falha na inclusão de registro. </string>
+    <string name="btnEditar"> Editar </string>	
+
+    
+    <!--  recursos usados nos evento -->
+    <string name="lblEvento"> Nome do Evento </string>
+    <string name="lblLocal"> Local </string>
+    <string name="lblResponsavel"> Responsável </string>
+    <string name="lblDataInicio"> Data Inicio </string>
+    <string name="lblDataFinal"> Data Fim </string>
+    <string name="lblStatus"> Status </string>
+    <string name="TipoEvento"> Tipo do Evento </string>
+    <string name="btnAssociar"> Associar Convidados</string>
+    <string name="lblNomeEvento"> Nome do Evento </string>
+    
+    <string-array 
+        name="listaStatus">
+        <item n="1"> Aberto  </item>
+        <item n="2"> Fechado </item>
+    </string-array>
+    
+	<!-- Recursos para cadastro das funções -->
+	
+	
+	<!-- Recursos para cadastro das tipos de evento -->
+	<string name="lblTipoEvento"> Tipo do Evento </string>
 	
 </resources>

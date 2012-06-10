@@ -4,11 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:background="@android:color/darker_gray">
+    
+    <include layout="@layout/comandos"/>
 
-    <TextView
-        android:id="@+id/txtHello2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recepcao" />
-
+    <ListView
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent">
+        
+        
+    </ListView>
+    
 </LinearLayout>
