@@ -4,97 +4,68 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:background="@android:color/darker_gray">
-
-    <include layout="@layout/comandos"/>
+
+    <include
+        android:layout_width="match_parent"
+        layout="@layout/comandos" />
     
 	<TableLayout
 		android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 	
-      <TableRow
-          android:id="@+id/tableRow5"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" >
-
-            <EditText
+            <TextView
                 android:id="@+id/editNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/lblNome" />
+                android:textColor="@android:color/white"
+                android:textSize="30dp"
+                android:text="@string/lblNome" />
 
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            
-            <EditText
+            <TextView
                 android:id="@+id/editMail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-				android:hint="@string/lblMail">
-                <requestFocus />
-            </EditText>
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:text="@string/lblMail"/>
 
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <EditText
+            <TextView
                 android:id="@+id/editPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/lblTelefone" />
-        </TableRow>
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:text="@string/lblTelefone" />
 
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <EditText
+            <TextView
                 android:id="@+id/editOrigem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/lblOrigem" />
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:text="@string/lblOrigem" />
 
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <EditText
+            <TextView
                 android:id="@+id/editFuncao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/lblFuncao" />
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:text="@string/lblFuncao" />
 
-        </TableRow>
     </TableLayout>
 
-    <TableRow
-        android:id="@+id/tableRow10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+    <Button
+		android:id="@+id/btnEditar"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:text="@string/btnEditar"
+		android:layout_gravity="right"/>
 
-        <Button
-            android:id="@+id/btnInsert"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/btnGravar" />
-
-    </TableRow>
 
 </LinearLayout>

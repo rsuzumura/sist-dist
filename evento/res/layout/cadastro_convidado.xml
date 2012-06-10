@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@android:color/darker_gray"
+    android:paddingLeft="10dp">
+
+    <include layout="@layout/comandos"/>
+    
+	<TableLayout
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+	
+      <TableRow
+          android:id="@+id/tableRow5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblNome" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <EditText
+                android:id="@+id/editMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+				android:hint="@string/lblMail">
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblTelefone" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editOrigem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblOrigem" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+			<Spinner
+                android:id="@+id/editFuncao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblFuncao" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+       android:id="@+id/btnInsert"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+       android:text="@string/btnGravar" 
+       android:layout_gravity="right"/>
+
+</LinearLayout>
