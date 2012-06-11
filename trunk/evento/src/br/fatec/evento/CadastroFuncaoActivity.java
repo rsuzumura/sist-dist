@@ -48,7 +48,6 @@ public class CadastroFuncaoActivity extends Activity implements OnClickListener 
         atualizaTela();
     }
     
-    @Override
     public void onClick(View v) {
     	
     	switch (v.getId()) {

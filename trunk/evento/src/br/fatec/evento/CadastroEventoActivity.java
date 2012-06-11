@@ -24,7 +24,6 @@ public class CadastroEventoActivity extends Activity implements OnClickListener 
         btnGravar.setOnClickListener(this);
     }
     
-    @Override
     public void onClick(View v) {
 
     	switch (v.getId()) {

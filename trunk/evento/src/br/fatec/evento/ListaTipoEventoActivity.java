@@ -27,7 +27,6 @@ public class ListaTipoEventoActivity extends ListActivity implements OnClickList
 
     }
     
-    @Override
     public void onClick(View v) {
     	Intent it;
     	
@@ -44,7 +43,6 @@ public class ListaTipoEventoActivity extends ListActivity implements OnClickList
 		}
     }
     
-    @Override
 	protected void onListItemClick(ListView l, View v, int position, long id) 
     {
     	Intent it = new Intent("EVENTO_CAD_TIPOEVENTO");
