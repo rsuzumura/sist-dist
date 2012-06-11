@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 
-public class MainActivity extends Activity implements OnClickListener {
+public class mainActivity extends Activity implements OnClickListener {
 	/** Called when the activity is first created. */
 	public final int CONFIG = 0;
 	
