@@ -32,7 +32,7 @@
             android:layout_height="wrap_content" >
             
             <EditText
-                android:id="@+id/txtMail"
+                android:id="@+id/txtLocal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -70,7 +70,7 @@
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:inputType="date" 
-                android:hint="@string/lblDataInicio"/>
+                android:hint="@string/lblDataInicial"/>
             
             <EditText
                 android:id="@+id/txtDataFinal"
@@ -128,10 +128,10 @@
     </TableLayout>
 
     <Button
-       android:id="@+id/btnEditar"
+       android:id="@+id/btnGravar"
        android:layout_width="100dp"
        android:layout_height="wrap_content"
-       android:text="@string/btnEditar" 
+       android:text="@string/btnGravar" 
        android:layout_gravity="right"/>
 
 </LinearLayout>
