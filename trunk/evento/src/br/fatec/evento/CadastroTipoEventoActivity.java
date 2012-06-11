@@ -15,23 +15,25 @@ public class CadastroTipoEventoActivity extends Activity implements OnClickListe
 	public final int INVISIBILITY = 4;
 	private boolean edicao = false;
 	
-	Button btnEditar;
+	Button btnGravar;
 	EditText txtNomeTpEvento;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         
     	String nomeItemSelecionado = "";
+    	int pos = -1;
     	
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_tipo_evento);
         
 		Bundle params = getIntent().getExtras();
-        int pos = params.getInt("Codigo");
-
-        if ( pos != 0)
-        	nomeItemSelecionado = items[pos];
         
+		if ( params != null ) {
+			pos = params.getInt("Codigo");
+        	nomeItemSelecionado = items[pos];
+        	edicao = true;
+        }
         ImageView btnInsert = (ImageView) findViewById(R.id.btnInsert);
         btnInsert.setClickable(true);
         btnInsert.setVisibility(0);
@@ -41,8 +43,9 @@ public class CadastroTipoEventoActivity extends Activity implements OnClickListe
         
         txtNomeTpEvento.setText(nomeItemSelecionado);
         
-        btnEditar = (Button) findViewById(R.id.btnEditar);
-        btnEditar.setOnClickListener(this);
+        btnGravar = (Button) findViewById(R.id.btnGravar);
+        btnGravar.setOnClickListener(this);
+        atualizaTela();
     }
     
     public void onClick(View v) {
@@ -58,8 +61,8 @@ public class CadastroTipoEventoActivity extends Activity implements OnClickListe
     }
     
     private void atualizaTela() {
-    	String textoBotaoEdicao = (String) ( edicao ? "Gravar" : R.string.btnEditar );
-   		btnEditar.setText(textoBotaoEdicao);
+    	String textoBotaoEdicao = ( edicao ? "Gravar" : "Editar");
+   		btnGravar.setText(textoBotaoEdicao);
     	txtNomeTpEvento.setEnabled(edicao);    		
     }
 }
