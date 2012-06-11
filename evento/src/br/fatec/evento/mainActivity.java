@@ -28,7 +28,6 @@ public class mainActivity extends Activity implements OnClickListener {
         btnEvento.setOnClickListener(this);
     }
     
-    @Override
     public void onClick(View v) {
     	Intent it;
     	switch (v.getId()) {

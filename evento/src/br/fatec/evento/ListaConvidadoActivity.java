@@ -28,7 +28,6 @@ public class ListaConvidadoActivity extends ListActivity implements OnClickListe
 
     }
 
-    @Override
     public void onClick(View v) {
 
 		}

@@ -27,7 +27,6 @@ public class ListaFuncaoActivity extends ListActivity implements OnClickListener
 
     }
     
-    @Override
     public void onClick(View v) {
     	Intent it;
     	switch (v.getId()) {
@@ -43,7 +42,6 @@ public class ListaFuncaoActivity extends ListActivity implements OnClickListener
 
     }
     
-    @Override
 	protected void onListItemClick(ListView l, View v, int position, long id) 
     {
     	Intent it = new Intent("EVENTO_CAD_FUNCAO");

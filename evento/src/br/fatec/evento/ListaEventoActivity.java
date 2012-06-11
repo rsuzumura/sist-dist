@@ -26,7 +26,6 @@ public class ListaEventoActivity extends ListActivity implements OnClickListener
 
     }
     
-    @Override
     public void onClick(View v) {
     	Intent it;
     	
@@ -43,7 +42,6 @@ public class ListaEventoActivity extends ListActivity implements OnClickListener
     	
     }
     
-    @Override
 	protected void onListItemClick(ListView l, View v, int position, long id) 
     {
     	Intent it = new Intent("EVENTO_EVENTO");
