@@ -1,6 +1,6 @@
 package br.fatec.evento;
 
-import android.app.Activity; 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 
-public class ListaTipoEventoActivity extends Activity implements OnClickListener {
+public class ListaTipoEventoActivity extends ListActivity implements OnClickListener {
 	/** Called when the activity is first created. */
 	public String[] items = new String[] { "Tipo Evento 1","Tipo Evento 2","Tipo Evento 3"};
 	
@@ -22,20 +22,10 @@ public class ListaTipoEventoActivity extends Activity implements OnClickListener
         setContentView(R.layout.lista_tipo_evento);
         
         ImageView btnInsert = (ImageView) findViewById(R.id.btnInsert);
-        btnInsert.setVisibility(0);
+//        btnInsert.setVisibility(0);
+        btnInsert.setOnClickListener(this);
         
-        ListView lista = (ListView) findViewById(R.id.listaTipoEventos);
-        
-        lista.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));
-        lista.setOnItemClickListener(new OnItemClickListener() {
-        	@Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            	Intent it = new Intent("EVENTO_CAD_TIPOEVENTO");
-	    		it.putExtra("Codigo", position);
-	    		it.addCategory("BR_FATECSP");
-	    		startActivity( it );
-            }
-        } );
+        this.setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));
 
     }
     
@@ -54,6 +44,15 @@ public class ListaTipoEventoActivity extends Activity implements OnClickListener
 		default:
 			break;
 		}
+    }
+    
+    @Override
+	protected void onListItemClick(ListView l, View v, int position, long id) 
+    {
+    	Intent it = new Intent("EVENTO_CAD_TIPOEVENTO");
+		it.putExtra("Codigo", position);
+		it.addCategory("BR_FATECSP");
+		startActivity( it );
     }
     
     public String[] getItems()

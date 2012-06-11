@@ -58,7 +58,7 @@
         </activity>
         
         <activity 
-            android:name=".CadastroTipoEvento">
+            android:name=".CadastroTipoEventoActivity">
             <intent-filter>
                 <action android:name="EVENTO_CAD_TIPOEVENTO" />
                 <category android:name="BR_FATECSP" />
