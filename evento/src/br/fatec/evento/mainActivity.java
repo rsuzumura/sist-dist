@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 
-public class mainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener {
 	/** Called when the activity is first created. */
 	public final int CONFIG = 0;
 	
@@ -32,24 +32,28 @@ public class mainActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
     	Intent it;
     	switch (v.getId()) {
-    	case R.id.btnAdmin :  
+    	
+    	case R.id.btnConvidado :
+    		// executar intent com chamada de tela para registro dos convidados ou ligação com eventos
+    		it = new Intent("EVENTO_LISTA_CONVIDADO");
+    		it.addCategory("BR_FATECSP");
+    		startActivity( it ); 
+    		break;
+
+    	case R.id.btnEvento : 
+    		// executar intent com chamada de tela para registro dos convidados ou ligação com eventos
+    		it = new Intent("EVENTO_LISTA_EVENTO");
+    		it.addCategory("BR_FATECSP");
+    		startActivity( it ); 
+    		break;
+        	
+       	case R.id.btnAdmin :  
     		// executar intent com chamada de tela para cadastro de tipos de eventos e funções
     		it = new Intent("EVENTO_ADMIN");
     		it.addCategory("BR_FATECSP");
     		startActivity( it );
     		break; 
-    	case R.id.btnEvento : 
-    		// executar intent com chamada de tela para registro dos convidados ou ligação com eventos
-    		it = new Intent("EVENTO_ACOES");
-    		it.addCategory("BR_FATECSP");
-    		startActivity( it ); 
-    		break;
-    	case R.id.btnConvidado :
-    		// executar intent com chamada de tela para registro dos convidados ou ligação com eventos
-    		it = new Intent("EVENTO_CONVIDADO");
-    		it.addCategory("BR_FATECSP");
-    		startActivity( it ); 
-    		break;
+
     	}
     }
     
@@ -68,9 +72,9 @@ public class mainActivity extends Activity implements OnClickListener {
 		case CONFIG:
 			it = new Intent("EVENTO_CONFIG");
 			startActivity(it);
-			return true;
 		default: 
-			return true;
+
 		}
+		return true;
 	}
 }
