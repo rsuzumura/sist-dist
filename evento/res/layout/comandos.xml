@@ -9,7 +9,7 @@
 		android:layout_width="match_parent"
         android:layout_height="match_parent" >
         
-    <TableRow
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
@@ -18,7 +18,6 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/lblTitulo"
-	        android:clickable="true"
 	        android:textSize="35dp"
 	        android:layout_gravity="bottom"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -28,25 +27,23 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:clickable="true"
+		    android:paddingLeft="10dp"
+		    android:layout_toRightOf="@+id/txtTitulo"
 		    android:layout_gravity="right"
 		    android:src="@drawable/add" />
 		
-	    </TableRow>
+	    </RelativeLayout>
 	</TableLayout>
 	
 	<TableLayout
 		android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
-    <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" >
-
+    
         <TextView
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:text="@string/divisor"
 	        android:textColor="@android:color/white" />
-    	</TableRow>
 	</TableLayout>
     
 </LinearLayout>
