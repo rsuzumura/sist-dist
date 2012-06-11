@@ -94,15 +94,6 @@
         </activity>
         
         <activity 
-            android:name=".FuncaoActivity">
-            <intent-filter>
-                <action android:name="EVENTO_FUNCAO" />
-                <category android:name="BR_FATECSP" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        
-        <activity 
             android:name=".ListaConvidadoActivity">
             <intent-filter>
                 <action android:name="EVENTO_LISTA_CONVIDADO" />

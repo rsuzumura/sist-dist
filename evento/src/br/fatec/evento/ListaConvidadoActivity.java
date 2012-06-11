@@ -1,6 +1,7 @@
 package br.fatec.evento;
 
 import android.app.Activity; 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 
-public class ListaConvidadoActivity extends Activity implements OnClickListener {
+public class ListaConvidadoActivity extends ListActivity implements OnClickListener {
 	/** Called when the activity is first created. */
 	
 	String[] items = new String[] { "Evento 1","Evento 2","Evento 3"};
@@ -22,16 +23,17 @@ public class ListaConvidadoActivity extends Activity implements OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_convidados);
         
-        listaConvidados = (ListView) findViewById(R.id.listaConvidados);
         
-    	listaConvidados.setAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));        
+    	this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));        
 
     }
-    
+
+    @Override
     public void onClick(View v) {
 
 		}
-/*  PRECISA INSERIR IDENTIFICAÇÃO PARA REPASSAR O CONTROLE QUANDO HOUVER CLIQUE NA LISTA    
+/*
+    @Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 
 		switch (position) {

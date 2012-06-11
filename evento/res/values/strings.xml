@@ -40,7 +40,7 @@
     <string name="lblEvento"> Nome do Evento </string>
     <string name="lblLocal"> Local </string>
     <string name="lblResponsavel"> Responsável </string>
-    <string name="lblDataInicio"> Data Inicio </string>
+    <string name="lblDataInicial"> Data Inicio </string>
     <string name="lblDataFinal"> Data Fim </string>
     <string name="lblStatus"> Status </string>
     <string name="TipoEvento"> Tipo do Evento </string>
