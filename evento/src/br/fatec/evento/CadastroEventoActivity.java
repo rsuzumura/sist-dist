@@ -56,7 +56,7 @@ public class CadastroEventoActivity extends Activity implements OnClickListener 
 			break;
 		case R.id.btnAssociar:
 			it = new Intent("EVENTO_ASSOCIAR");
-			it.putExtra("nome", txtNomeEvento.getText() );
+			it.putExtra("nome", txtNomeEvento.getText().toString() );
 			it.addCategory("BR_FATECSP");
 			startActivityForResult( it, RETORNO );
 			break;
