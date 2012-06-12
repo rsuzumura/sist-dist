@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class CadastroEventoActivity extends Activity implements OnClickListener {
@@ -14,13 +15,31 @@ public class CadastroEventoActivity extends Activity implements OnClickListener 
 	public final int INVISIBILITY = 4;
 	final private int RETORNO = 1;
 	
+	//--------------------------------------
+	//
+	//-------------------------------------
+	TextView txtNomeEvento;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_evento);
      
+        String nomeEvento = "";
+        
+		Bundle params = getIntent().getExtras();
+		if ( params != null )
+			nomeEvento = params.getString("idEvento");
+        
         ImageView btnInsert = (ImageView) findViewById(R.id.btnInsert);
         btnInsert.setVisibility(INVISIBILITY);
+        btnInsert.setClickable(false);
+        
+        TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);
+        txtTitulo.setText(R.string.txtCadastroEvento);
+        
+        txtNomeEvento = (TextView) findViewById(R.id.txtNomeEvento);
+        txtNomeEvento.setText(nomeEvento);
         
         Button btnGravar = (Button) findViewById(R.id.btnGravar);
         btnGravar.setOnClickListener(this);
@@ -37,7 +56,7 @@ public class CadastroEventoActivity extends Activity implements OnClickListener 
 			break;
 		case R.id.btnAssociar:
 			it = new Intent("EVENTO_ASSOCIAR");
-			it.putExtra("idEvento", "Evento Selec");
+			it.putExtra("nome", txtNomeEvento.getText() );
 			it.addCategory("BR_FATECSP");
 			startActivityForResult( it, RETORNO );
 			break;
@@ -52,10 +71,10 @@ public class CadastroEventoActivity extends Activity implements OnClickListener 
 
 		if (codigo == RETORNO) {
 			if (it !=null) {
-				// -------------------------------
+				// ---------------------------------
 				// Problema? como identificar os 
 				// diversos convidados selecionados
-				// -------------------------------
+				// ---------------------------------
 			}
 		}
     }

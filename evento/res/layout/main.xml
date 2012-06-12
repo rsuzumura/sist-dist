@@ -6,13 +6,6 @@
     android:background="@android:color/darker_gray">
 
     <TextView
-        android:id="@+id/txtHello"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome Empresa"
-        android:textColor="@android:color/white" />
-
-    <TextView
         android:id="@+id/btnConvidado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

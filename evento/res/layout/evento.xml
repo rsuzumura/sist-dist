@@ -38,22 +38,22 @@
                 android:textColor="@android:color/white"
                 android:textSize="20dp"
                 android:text="@string/lblResponsavel" />
-
+            
             <TextView
-                android:id="@+id/editOrigem"
+                android:id="@+id/lblStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
                 android:textSize="20dp"
-                android:text="@string/lblOrigem" />
-
+                android:text="@string/lblStatus" />
+            
             <TextView
-                android:id="@+id/editFuncao"
+                android:id="@+id/lblDateIniFim"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
                 android:textSize="20dp"
-                android:text="@string/lblFuncao" />
+                android:text="@string/lblDatIniFim" />
 
       <TableRow
           android:id="@+id/tableRow1"
