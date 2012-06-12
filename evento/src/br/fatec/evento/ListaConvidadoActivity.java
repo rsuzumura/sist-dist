@@ -10,20 +10,22 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 public class ListaConvidadoActivity extends ListActivity implements OnClickListener {
 	/** Called when the activity is first created. */
 	
 	String[] items = new String[] { "Evento 1","Evento 2","Evento 3"};
-	ListView listaConvidados; 
+	ListView listaConvidados;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_convidados);
         
-        
+    	TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);
+    	txtTitulo.setText(R.string.btnConvidado);
     	this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));        
 
     }
