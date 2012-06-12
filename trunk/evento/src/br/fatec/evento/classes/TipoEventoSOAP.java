@@ -30,9 +30,10 @@ public class TipoEventoSOAP {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
+            SoapObject array = (SoapObject)responseObject.getProperty(0);
+            
             for (int i = 0; i < responseObject.getPropertyCount(); i++){
-            	TipoEvento te = new TipoEvento();
-                SoapObject array = (SoapObject)responseObject.getProperty(0);
+            	TipoEvento te = new TipoEvento();                
                 SoapObject ret = (SoapObject)array.getProperty(i);
                 te.id 	= Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
                 te.nome = ((SoapPrimitive)ret.getProperty(1)).toString();

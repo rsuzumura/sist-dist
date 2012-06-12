@@ -31,9 +31,10 @@ public class FuncaoSOAP {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
+            SoapObject array = (SoapObject)responseObject.getProperty(0);
+            
             for (int i = 0; i < responseObject.getPropertyCount(); i++){
-            	Funcao f = new Funcao();
-                SoapObject array = (SoapObject)responseObject.getProperty(0);
+            	Funcao f = new Funcao();                
                 SoapObject ret = (SoapObject)array.getProperty(i);
                 f.id 	= Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
                 f.nome = ((SoapPrimitive)ret.getProperty(1)).toString();

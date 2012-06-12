@@ -40,6 +40,15 @@
         </activity>
     
         <activity 
+            android:name=".CadastroConvidadoActivity">
+            <intent-filter>
+                <action android:name="EVENTO_CAD_CONVIDADO" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity 
             android:name=".CadastroEventoActivity">
             <intent-filter>
                 <action android:name="EVENTO_CAD_EVENTO" />

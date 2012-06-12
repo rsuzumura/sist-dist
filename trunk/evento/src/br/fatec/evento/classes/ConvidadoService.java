@@ -35,8 +35,9 @@ public class ConvidadoService extends Thread{
 				updateResult = cs.Save(request.id, request.nome, request.email, request.telefone, request.origem); 
 				break;
 			}
+			result = "OK";
 		} catch(Exception ex) {
-			result = ex.toString();
+			result = "Erro";
 		}
 	}
 }
