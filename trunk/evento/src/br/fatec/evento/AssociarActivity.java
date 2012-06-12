@@ -1,13 +1,14 @@
 package br.fatec.evento;
 
-import android.app.Activity; 
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 
 public class AssociarActivity extends ListActivity implements OnClickListener {
@@ -25,7 +26,17 @@ public class AssociarActivity extends ListActivity implements OnClickListener {
         // e filtrar os registro que podem ser exibidos
         // ------------------------------------------------
         
+        String nomeEvento = "";
+        
+		Bundle params = getIntent().getExtras();
+		if ( params != null ) {
+			nomeEvento = params.getString("nome");
+        }
+        
         this.setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_checked, items));
+        
+        TextView lblNomeEvento = (TextView) findViewById(R.id.lblNomeEvento);
+        lblNomeEvento.setText(nomeEvento);
         
         ImageView btnConfirmar = (ImageView) findViewById(R.id.btnConfirmar);
         btnConfirmar.setOnClickListener(this);
@@ -47,5 +58,14 @@ public class AssociarActivity extends ListActivity implements OnClickListener {
 		default:
 			break;
 		}
+    }
+    
+	protected void onListItemClick(ListView l, View v, int position, long id) 
+    {
+		CheckedTextView check = (CheckedTextView) v;
+		check.setChecked(!check.isChecked());
+		// ------------------------------------------------------------
+		//  Inserir tratamento para inclusão em variáveis auxiliares
+		// ------------------------------------------------------------
     }
 }

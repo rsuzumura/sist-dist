@@ -27,6 +27,9 @@ public class CadastroFuncaoActivity extends Activity implements OnClickListener 
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_funcao);
         
+        TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);
+        txtTitulo.setText(R.string.txtCadastroFuncao);
+        
 		Bundle params = getIntent().getExtras();
         
 		if ( params != null ) {

@@ -6,7 +6,7 @@
 	<!-- texto de label dos botões principais na navegação  -->
     <string name="btnConvidado"> Convidados </string>
     <string name="btnAcoes"> Eventos </string>
-    <string name="btnAdmin"> Parametros </string>
+    <string name="btnAdmin"> Parâmetros </string>
     
     <string name="btnEvento"> Eventos </string>
 
@@ -60,6 +60,9 @@
 	<string name="lblTipoEvento"> Tipo do Evento </string>
 	
 	<string name="txtParam"> Parâmetros </string>
-	
-	<string name="btnConfirmar">Confirmar</string>
+	<string name="txtCadastroEvento"> Cadastro Evento</string>
+	<string name="btnConfirmar"> Confirmar</string>
+	<string name="txtCadastroFuncao"> Cadastro Função</string>
+	<string name="txtCadastroTipoEvento"> Tipo Evento</string>
+	<string name="lblDatIniFim"> Inicio-Fim</string>
 </resources>
