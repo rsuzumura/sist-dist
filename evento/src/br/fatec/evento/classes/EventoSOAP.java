@@ -33,10 +33,11 @@ public class EventoSOAP {
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
             SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
+            SoapObject array = (SoapObject)responseObject.getProperty(0);
             
-            for (int i = 0; i < responseObject.getPropertyCount(); i++){
+            for (int i = 0; i < array.getPropertyCount(); i++){
             	Evento e = new Evento();
-            	SoapObject array = (SoapObject)responseObject.getProperty(0);
+            	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
             	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();
@@ -70,10 +71,10 @@ public class EventoSOAP {
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
             SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
+            SoapObject array = (SoapObject)responseObject.getProperty(0);
             
-            for (int i = 0; i < responseObject.getPropertyCount(); i++){
-            	Evento e = new Evento();
-            	SoapObject array = (SoapObject)responseObject.getProperty(0);
+            for (int i = 0; i < array.getPropertyCount(); i++){
+            	Evento e = new Evento();            	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
             	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();
@@ -107,10 +108,10 @@ public class EventoSOAP {
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
             SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
+            SoapObject array = (SoapObject)responseObject.getProperty(0);
             
-            for (int i = 0; i < responseObject.getPropertyCount(); i++){
-            	Evento e = new Evento();
-            	SoapObject array = (SoapObject)responseObject.getProperty(0);
+            for (int i = 0; i < array.getPropertyCount(); i++){
+            	Evento e = new Evento();            	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
             	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();
@@ -144,10 +145,9 @@ public class EventoSOAP {
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
             SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
-            
-            for (int i = 0; i < responseObject.getPropertyCount(); i++){
-            	Evento e = new Evento();
-            	SoapObject array = (SoapObject)responseObject.getProperty(0);
+            SoapObject array = (SoapObject)responseObject.getProperty(0);
+            for (int i = 0; i < array.getPropertyCount(); i++){
+            	Evento e = new Evento();            	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
             	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();

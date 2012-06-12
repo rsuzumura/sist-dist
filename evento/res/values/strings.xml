@@ -65,4 +65,6 @@
 	<string name="txtCadastroFuncao"> Cadastro Função</string>
 	<string name="txtCadastroTipoEvento"> Tipo Evento</string>
 	<string name="lblDatIniFim"> Inicio-Fim</string>
+	<string name="msgOK">Cadastro Efetuado</string>
+	<string name="msgError">Erro de Cadastro</string>
 </resources>
