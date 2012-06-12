@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 public class ListaTipoEventoActivity extends ListActivity implements OnClickListener {
@@ -22,6 +23,9 @@ public class ListaTipoEventoActivity extends ListActivity implements OnClickList
         ImageView btnInsert = (ImageView) findViewById(R.id.btnInsert);
         btnInsert.setVisibility(0);
         btnInsert.setOnClickListener(this);
+        
+    	TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);
+    	txtTitulo.setText(R.string.btnTipoEvento);
         
         this.setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));
 

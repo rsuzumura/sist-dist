@@ -19,6 +19,9 @@ public class AdminActivity extends Activity implements OnClickListener {
         TextView btnTipoEvento = (TextView) findViewById(R.id.btnTipoEvento);
         btnTipoEvento.setOnClickListener(this);
         
+        TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);
+        txtTitulo.setText(R.string.txtParam);
+        
         TextView btnFuncoes = (TextView) findViewById(R.id.btnFuncoes);
         btnFuncoes.setOnClickListener(this);
 

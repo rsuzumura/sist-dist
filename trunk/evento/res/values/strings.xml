@@ -59,4 +59,7 @@
 	<!-- Recursos para cadastro das tipos de evento -->
 	<string name="lblTipoEvento"> Tipo do Evento </string>
 	
+	<string name="txtParam"> Parâmetros </string>
+	
+	<string name="btnConfirmar">Confirmar</string>
 </resources>
