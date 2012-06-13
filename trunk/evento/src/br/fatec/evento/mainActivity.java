@@ -56,6 +56,13 @@ public class mainActivity extends Activity implements OnClickListener {
     		startActivity( it );
     		break; 
 
+       	case R.id.btnRecepcao :  
+    		// executar intent com chamada de tela para cadastro de tipos de eventos e funções
+    		it = new Intent("EVENTO_RECEPCAO");
+    		it.addCategory("BR_FATECSP");
+    		startActivity( it );
+    		break; 
+
     	}
     }
     
