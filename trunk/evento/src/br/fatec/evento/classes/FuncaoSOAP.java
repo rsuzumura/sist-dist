@@ -33,7 +33,7 @@ public class FuncaoSOAP {
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
             SoapObject array = (SoapObject)responseObject.getProperty(0);
             
-            for (int i = 0; i < responseObject.getPropertyCount(); i++){
+            for (int i = 0; i < array.getPropertyCount(); i++){
             	Funcao f = new Funcao();                
                 SoapObject ret = (SoapObject)array.getProperty(i);
                 f.id 	= Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
