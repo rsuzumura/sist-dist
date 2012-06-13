@@ -47,7 +47,11 @@ public class ListaConvidadoActivity extends ListActivity implements OnClickListe
     	ImageView btnInsert = (ImageView)findViewById(R.id.btnInsert);
     	btnInsert.setOnClickListener(this);
     	txtTitulo.setText(R.string.btnConvidado);
-    	this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));        
+    	if (items != null)
+    		this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));
+    	else {
+    		this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, new String[]{ }));
+    	}
 
     }
 
@@ -87,7 +91,10 @@ public class ListaConvidadoActivity extends ListActivity implements OnClickListe
 				i++;
 			}
     	}
-    	this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));
+    	if (items != null)
+    		this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items));
+    	else {
+    		this.setListAdapter( new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, new String[]{ }));
+    	}
     }
-
 }

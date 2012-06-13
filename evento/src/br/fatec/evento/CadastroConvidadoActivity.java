@@ -3,6 +3,7 @@ package br.fatec.evento;
 import br.fatec.evento.classes.ConvidadoSOAP;
 import android.app.Activity; 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -42,7 +43,8 @@ public class CadastroConvidadoActivity extends Activity implements OnClickListen
     }
     
     public void onClick(View v) {
-    	final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+    	AlertDialog dialog = new AlertDialog.Builder(this).create();
+    	boolean success = false;
     	SharedPreferences pref = getSharedPreferences( "EVENTO", MODE_PRIVATE);
     	String url = pref.getString("url", "");
     	ConvidadoSOAP cs = new ConvidadoSOAP(url);
@@ -59,8 +61,9 @@ public class CadastroConvidadoActivity extends Activity implements OnClickListen
 					editOrigem.getText().toString());
     			if (id != 0) {
     				dialog.setTitle("Cadastro efetuado com sucesso");
-    				dialog.setMessage(R.string.msgOK);
+    				dialog.setMessage(getString(R.string.msgOK));
     				dialog.setIcon(android.R.drawable.ic_dialog_info);
+    				success = true;
     			} else {
     				dialog.setMessage("Erro no Cadastro do Convidado.");
     				dialog.setTitle(R.string.msgError);
@@ -75,8 +78,9 @@ public class CadastroConvidadoActivity extends Activity implements OnClickListen
 					editOrigem.getText().toString());
     			if (updated) {
     				dialog.setTitle("Cadastro alterado com sucesso");
-    				dialog.setMessage(R.string.msgOK);
+    				dialog.setMessage(getString(R.string.msgOK));
     				dialog.setIcon(android.R.drawable.ic_dialog_info);
+    				success = true;
     			} else {
     				dialog.setMessage("Erro na Alteração do Convidado.");
     				dialog.setTitle(R.string.msgError);
@@ -89,6 +93,13 @@ public class CadastroConvidadoActivity extends Activity implements OnClickListen
 			dialog.setTitle(R.string.msgError);
 			dialog.setIcon(android.R.drawable.ic_dialog_alert);
     	}
+    	dialog.setButton("OK", new DialogInterface.OnClickListener() {
+    		   public void onClick(DialogInterface dialog, int which) {
+    		      dialog.cancel();
+    		   }
+    		});
     	dialog.show();
+    	if (success)
+    		this.finish();
     }
 }
