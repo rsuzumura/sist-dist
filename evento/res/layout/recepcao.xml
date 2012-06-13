@@ -20,10 +20,35 @@
         
 	    <Spinner 
 	        android:id="@+id/boxEvento"
-	        android:layout_width="150dp"
+	        android:layout_width="200dp"
 	        android:layout_height="wrap_content"/>
 	
     </TableRow>    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/divisor"
+        android:textColor="@android:color/white" />
+    
+    <TableRow 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/msgRecepcao"
+	        android:layout_gravity="center_vertical"
+	        android:textColor="@android:color/white" />
+	    
+	    <Button 
+	        android:id="@+id/btnConfirmar"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:gravity="center_vertical"
+	        android:layout_gravity="right"
+	        android:text="@string/btnConfirmar"/>
+    </TableRow>
+    
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

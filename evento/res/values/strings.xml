@@ -53,9 +53,6 @@
         <item n="2"> Fechado </item>
     </string-array>
     
-	<!-- Recursos para cadastro das funções -->
-	
-	
 	<!-- Recursos para cadastro das tipos de evento -->
 	<string name="lblTipoEvento"> Tipo do Evento </string>
 	
@@ -67,4 +64,7 @@
 	<string name="lblDatIniFim"> Inicio-Fim</string>
 	<string name="msgOK">Cadastro Efetuado</string>
 	<string name="msgError">Erro de Cadastro</string>
+	
+	<string name="msgRecepcao">Selecione abaixo e confirme ao lado</string>
+	
 </resources>

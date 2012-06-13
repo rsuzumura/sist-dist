@@ -139,7 +139,7 @@
         </activity>
         
         <activity 
-            android:name=".RecepcaoActivityActivity">
+            android:name=".RecepcaoActivity">
             <intent-filter>
                 <action android:name="EVENTO_RECEPCAO" />
                 <category android:name="BR_FATECSP" />
