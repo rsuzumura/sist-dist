@@ -43,7 +43,6 @@ public class ListaEventoActivity extends ListActivity implements OnClickListener
 		default:
 			break;
 		}
-    	
     }
     
 	protected void onListItemClick(ListView l, View v, int position, long id) 

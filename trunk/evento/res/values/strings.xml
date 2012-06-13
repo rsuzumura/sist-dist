@@ -16,7 +16,7 @@
     <string name="menuConfig"> Menu de Configurações </string>
     <string name="lblNomeEmpresa"> Nome da Empresa </string>
 
-	<string name="txtRecepcao"> Recepcao </string>
+	<string name="btnRecepcao"> Recepção </string>
 	
 	<string name="lblWebService"> URL Web Service </string>
 	<string name="lblTitulo"> Titulo da Janela</string>
