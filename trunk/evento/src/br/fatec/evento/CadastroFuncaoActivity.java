@@ -1,6 +1,10 @@
 package br.fatec.evento;
 
+import br.fatec.evento.classes.FuncaoSOAP;
 import android.app.Activity; 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,18 +16,14 @@ import android.widget.TextView;
 
 public class CadastroFuncaoActivity extends Activity implements OnClickListener {
 	/** Called when the activity is first created. */
-	public String[] items = new String[] { "Função 1","Função 2","Função 3"};
-	
+	int idFuncao;
 	Button btnGravar;
 	TextView txtFuncao;
-	boolean edicao;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         
-    	String nomeItemSelecionado = "";
-    	int pos = -1;
-    	
+    	String nome = "";    	    	
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_funcao);
         
@@ -31,44 +31,82 @@ public class CadastroFuncaoActivity extends Activity implements OnClickListener 
         txtTitulo.setText(R.string.txtCadastroFuncao);
         
 		Bundle params = getIntent().getExtras();
-        
+		
 		if ( params != null ) {
-			pos = params.getInt("Codigo");
-        	nomeItemSelecionado = items[pos];
+			idFuncao = params.getInt("id");
+			nome = params.getString("nome");
         }
 		
         ImageView btnInsert = (ImageView) findViewById(R.id.btnInsert);
         btnInsert.setClickable(true);
         btnInsert.setVisibility(0);
         
-        txtFuncao = (EditText) findViewById(R.id.txtNomeFuncao);
-        txtFuncao.setEnabled(edicao);
-        
-        txtFuncao.setText(nomeItemSelecionado);
+        txtFuncao = (EditText) findViewById(R.id.txtNomeFuncao);        
+        txtFuncao.setText(nome);
         
         btnGravar = (Button) findViewById(R.id.btnGravar);
         btnGravar.setOnClickListener(this);
-        atualizaTela();
     }
     
     public void onClick(View v) {
-    	
-    	switch (v.getId()) {
-    	
-		case R.id.btnGravar:
-			edicao = !edicao;
-			atualizaTela();
-			break;
+    	boolean success = false;
+    	AlertDialog dialog = new AlertDialog.Builder(this).create();
+    	switch (v.getId()) {    	
+			case R.id.btnGravar:				
+				SharedPreferences pref = getSharedPreferences( "EVENTO", MODE_PRIVATE);
+		    	String url = pref.getString("url", "");
+		    	
+		    	try {
+					FuncaoSOAP fs = new FuncaoSOAP(url);
+					if (idFuncao > 0) {
+						boolean updated = fs.Save(idFuncao, txtFuncao.getText().toString());
+						if (updated) {
+		    				dialog.setTitle("Cadastro alterado com sucesso");
+		    				dialog.setMessage(getString(R.string.msgOK));
+		    				dialog.setIcon(android.R.drawable.ic_dialog_info);
+		    				success = true;
+		    			} else {
+		    				dialog.setMessage("Erro na Alteração de Função.");
+		    				dialog.setTitle(R.string.msgError);
+		    				dialog.setIcon(android.R.drawable.ic_dialog_alert);
+		    			}
+					}
+					else {
+						idFuncao = fs.Add(txtFuncao.getText().toString());
+						if (idFuncao != 0) {
+		    				dialog.setTitle("Cadastro efetuado com sucesso");
+		    				dialog.setMessage(getString(R.string.msgOK));
+		    				dialog.setIcon(android.R.drawable.ic_dialog_info);
+		    				success = true;
+		    			} else {
+		    				dialog.setMessage("Erro no Cadastro de Função.");
+		    				dialog.setTitle(R.string.msgError);
+		    				dialog.setIcon(android.R.drawable.ic_dialog_alert);
+		    			}
+					}
+		    	} catch (Exception ex) {
+		    		dialog.setMessage("Erro no Cadastro de Função.");
+					dialog.setTitle(R.string.msgError);
+					dialog.setIcon(android.R.drawable.ic_dialog_alert);
+		    	}
+				break;
 
-		default:
-			break;
+			default:
+				break;
 		}
-
+    	dialog.setButton("OK", new DialogInterface.OnClickListener() {
+    		public void onClick(DialogInterface dialog, int which) {
+    			dialog.cancel();
+    		}
+ 		});
+    	dialog.show();
+    	if (success)
+    		this.finish();
     }
 
-    private void atualizaTela() {
+    /*private void atualizaTela() {
     	String textoBotaoEdicao = ( edicao ? "Gravar" : "Editar");
    		btnGravar.setText(textoBotaoEdicao);
     	txtFuncao.setEnabled(edicao);    		
-    }
+    }*/
 }
