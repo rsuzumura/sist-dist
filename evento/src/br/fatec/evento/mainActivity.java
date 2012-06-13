@@ -26,6 +26,9 @@ public class mainActivity extends Activity implements OnClickListener {
         
         TextView btnEvento = (TextView) findViewById(R.id.btnEvento);
         btnEvento.setOnClickListener(this);
+        
+        TextView btnRecepcao = (TextView) findViewById(R.id.btnRecepcao);
+        btnRecepcao.setOnClickListener(this);
     }
     
     public void onClick(View v) {
