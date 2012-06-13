@@ -138,6 +138,15 @@
             </intent-filter>
         </activity>
         
+        <activity 
+            android:name=".RecepcaoActivityActivity">
+            <intent-filter>
+                <action android:name="EVENTO_RECEPCAO" />
+                <category android:name="BR_FATECSP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
     </application>
 	
 </manifest>
