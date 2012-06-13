@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class CadastroConvidadoActivity extends Activity implements OnClickListener {
@@ -18,6 +19,10 @@ public class CadastroConvidadoActivity extends Activity implements OnClickListen
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_convidado);
+        
+        TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);
+        txtTitulo.setText(R.string.txtCadastroConvidado);
+        
         Button btnGravar = (Button)findViewById(R.id.btnGravar);
         btnGravar.setOnClickListener(this);
         
