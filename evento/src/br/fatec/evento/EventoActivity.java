@@ -12,10 +12,11 @@ import android.widget.TextView;
 public class EventoActivity extends Activity implements OnClickListener {
 	/** Called when the activity is first created. */
 	
-	public String[] items = new String[] { "Evento 1","Evento 2","Evento 3"};
+	//public String[] items = new String[] { "Evento 1","Evento 2","Evento 3"};
 	public final int RETORNO = 0;
 	Button btnAssociar;
 	Button btnEditar;
+	int idEvento;
 	
 	//-----------------------------
 	// campos da interface
@@ -27,13 +28,13 @@ public class EventoActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.evento);
         
-        int pos = -1;
+        //int pos = -1;
         String nomeItemSelecionado = "";
 		Bundle params = getIntent().getExtras();
         
 		if ( params != null ) {
-			pos = params.getInt("Codigo");
-        	nomeItemSelecionado = items[pos];
+			idEvento = params.getInt("id");
+        	nomeItemSelecionado = params.getString("nome");
         }
 		
 		TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);

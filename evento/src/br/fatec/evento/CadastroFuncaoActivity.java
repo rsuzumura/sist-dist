@@ -39,7 +39,7 @@ public class CadastroFuncaoActivity extends Activity implements OnClickListener 
 		
         ImageView btnInsert = (ImageView) findViewById(R.id.btnInsert);
         btnInsert.setClickable(true);
-        btnInsert.setVisibility(0);
+        btnInsert.setVisibility(View.INVISIBLE);
         
         txtFuncao = (EditText) findViewById(R.id.txtNomeFuncao);        
         txtFuncao.setText(nome);

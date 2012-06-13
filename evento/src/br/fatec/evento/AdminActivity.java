@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -24,6 +25,9 @@ public class AdminActivity extends Activity implements OnClickListener {
         
         TextView btnFuncoes = (TextView) findViewById(R.id.btnFuncoes);
         btnFuncoes.setOnClickListener(this);
+        
+        ImageView btnInsert = (ImageView) findViewById(R.id.btnInsert);
+        btnInsert.setVisibility(View.INVISIBLE);
 
     }
     
