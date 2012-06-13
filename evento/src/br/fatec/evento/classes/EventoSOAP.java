@@ -40,13 +40,13 @@ public class EventoSOAP {
             	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
-            	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();
-            	e.local 	   = ((SoapPrimitive)ret.getProperty(2)).toString();
-            	e.responsavel  = ((SoapPrimitive)ret.getProperty(3)).toString();
-            	e.inicioEvento = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.fimEvento    = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.status 	   = ((SoapPrimitive)ret.getProperty(4)).toString();
-            	e.tipoEventoId = Integer.parseInt(((SoapPrimitive)ret.getProperty(4)).toString());
+            	e.nome 		   = (String)ret.getPrimitivePropertySafely("Nome");
+            	e.local 	   = (String)ret.getPrimitivePropertySafely("Local");
+            	e.responsavel  = (String)ret.getPrimitivePropertySafely("Responsavel");
+            	e.inicioEvento = parser.parse((String)ret.getPrimitivePropertySafely("InicioEvento"));
+            	e.fimEvento    = parser.parse((String)ret.getPrimitivePropertySafely("FimEvento"));
+            	e.status 	   = (String)ret.getPrimitivePropertySafely("Status");
+            	e.tipoEventoId = (Integer)ret.getPrimitivePropertySafely("TipoEventoId");
             	result.add(e);
             }
             

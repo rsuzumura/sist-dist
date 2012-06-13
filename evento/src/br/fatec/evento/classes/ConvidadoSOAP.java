@@ -33,11 +33,11 @@ public class ConvidadoSOAP {
 
             Convidado c = new Convidado();
             SoapObject array = (SoapObject)responseObject.getProperty(0);
-            c.origem 	  = ((SoapPrimitive)array.getProperty(4)).toString();
-            c.id 	  	  = Integer.parseInt(((SoapPrimitive)array.getProperty(0)).toString());
-            c.nome 		  = ((SoapPrimitive)array.getProperty(1)).toString();
-            c.email 	  = ((SoapPrimitive)array.getProperty(2)).toString();
-            c.telefone 	  = ((SoapPrimitive)array.getProperty(3)).toString();
+            c.id 	  	  = (Integer)array.getPrimitivePropertySafely("id");
+            c.nome 		  = (String)array.getPrimitivePropertySafely("Nome");
+            c.email 	  = (String)array.getPrimitivePropertySafely("Email");
+            c.telefone 	  = (String)array.getPrimitivePropertySafely("Telefone");
+            c.origem 	  = (String)array.getPrimitivePropertySafely("Origem");
             
             return c;
         } catch (Exception e) {
@@ -63,10 +63,10 @@ public class ConvidadoSOAP {
             	Convidado c = new Convidado();
                 SoapObject obj = (SoapObject)array.getProperty(i);
                 c.id 	  	  = Integer.parseInt(((SoapPrimitive)obj.getProperty(0)).toString());
-                c.nome 		  = ((SoapPrimitive)obj.getProperty(1)).toString();
-                c.email 	  = ((SoapPrimitive)obj.getProperty(2)).toString();
-                c.telefone 	  = ((SoapPrimitive)obj.getProperty(3)).toString();
-                c.origem 	  = ((SoapPrimitive)obj.getProperty(4)).toString();
+                c.nome 		  = (String)obj.getPrimitivePropertySafely("Nome");
+                c.email 	  = (String)obj.getPrimitivePropertySafely("Email");
+                c.telefone 	  = (String)obj.getPrimitivePropertySafely("Telefone");
+                c.origem 	  = (String)obj.getPrimitivePropertySafely("Origem");
                 result.add(c);
             }
             return result;
@@ -90,14 +90,14 @@ public class ConvidadoSOAP {
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
             SoapObject array = (SoapObject)responseObject.getProperty(0);
-            for (int i = 0; i < responseObject.getPropertyCount(); i++){
+            for (int i = 0; i < array.getPropertyCount(); i++){
             	Convidado c = new Convidado();
                 SoapObject obj = (SoapObject)array.getProperty(i);
                 c.id 	  	  = Integer.parseInt(((SoapPrimitive)obj.getProperty(0)).toString());
-                c.nome 		  = ((SoapPrimitive)obj.getProperty(1)).toString();
-                c.email 	  = ((SoapPrimitive)obj.getProperty(2)).toString();
-                c.telefone 	  = ((SoapPrimitive)obj.getProperty(3)).toString();
-                c.origem 	  = ((SoapPrimitive)obj.getProperty(4)).toString();
+                c.nome 		  = (String)obj.getPrimitivePropertySafely("Nome");
+                c.email 	  = (String)obj.getPrimitivePropertySafely("Email");
+                c.telefone 	  = (String)obj.getPrimitivePropertySafely("Telefone");
+                c.origem 	  = (String)obj.getPrimitivePropertySafely("Origem");
                 result.add(c);
             }
             return result;

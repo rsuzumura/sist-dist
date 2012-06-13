@@ -32,11 +32,11 @@ public class TipoEventoSOAP {
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
             SoapObject array = (SoapObject)responseObject.getProperty(0);
             
-            for (int i = 0; i < responseObject.getPropertyCount(); i++){
+            for (int i = 0; i < array.getPropertyCount(); i++){
             	TipoEvento te = new TipoEvento();                
                 SoapObject ret = (SoapObject)array.getProperty(i);
                 te.id 	= Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
-                te.nome = ((SoapPrimitive)ret.getProperty(1)).toString();
+                te.nome = (String)ret.getPrimitivePropertySafely("Nome");
                 result.add(te);
             }
             return result;
