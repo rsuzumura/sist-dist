@@ -17,24 +17,36 @@ public class EventoActivity extends Activity implements OnClickListener {
 	Button btnAssociar;
 	Button btnEditar;
 	int idEvento;
+	int idTipoEvento;
 	
 	//-----------------------------
 	// campos da interface
 	//-----------------------------
 	TextView txtNome;
+	TextView txtLocal;
+	TextView txtResponsavel;
+	TextView lblStatus;
+	TextView lblDateIniFim;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.evento);
-        
-        //int pos = -1;
+        txtLocal = (TextView)findViewById(R.id.txtLocal);
+        txtResponsavel = (TextView)findViewById(R.id.txtResponsavel);
+        lblStatus = (TextView)findViewById(R.id.lblStatus);
+        lblDateIniFim = (TextView)findViewById(R.id.lblDateIniFim);
+        //int pos = -1;	
         String nomeItemSelecionado = "";
 		Bundle params = getIntent().getExtras();
         
 		if ( params != null ) {
 			idEvento = params.getInt("id");
         	nomeItemSelecionado = params.getString("nome");
+        	txtResponsavel.setText(txtResponsavel.getText().toString() + ": " + params.getString("local"));
+        	lblStatus.setText(lblStatus.getText().toString() + ": " + params.getString("status"));
+        	lblDateIniFim.setText(lblDateIniFim.getText().toString() + ": " + params.getString("inicioEvento") + " - " + params.getString("fimEvento"));
+        	idTipoEvento = params.getInt("tipoEventoId");
         }
 		
 		TextView txtTitulo = (TextView) findViewById(R.id.txtTitulo);
@@ -54,20 +66,32 @@ public class EventoActivity extends Activity implements OnClickListener {
     
     public void onClick(View v) {
     	Intent it;
-    	
-    	switch (v.getId()) {
-		case R.id.btnEditar:
-			it = new Intent("EVENTO_CAD_EVENTO");
-			it.putExtra("idEvento", txtNome.getText());
-			it.addCategory("BR_FATECSP");
-			startActivity( it );
+    	Bundle params = getIntent().getExtras();
+    	switch (v.getId()) {    	
+		case R.id.btnEditar:			
+			if ( params != null ) {
+				it = new Intent("EVENTO_CAD_EVENTO");
+				it.putExtra("id", idEvento);
+				it.putExtra("nome", params.getString("nome"));
+				it.putExtra("local", params.getString("local"));
+				it.putExtra("responsavel", params.getString("responsavel"));
+				it.putExtra("inicioEvento", params.getString("inicioEvento"));
+				it.putExtra("fimEvento", params.getString("fimEvento"));
+				it.putExtra("status", params.getString("status"));
+				it.putExtra("idTipoEvento", params.getInt("idTipoEvento"));
+				it.addCategory("BR_FATECSP");
+				startActivity( it );
+			}
 			break;
 
 		case R.id.btnAssociar:
-			it = new Intent("EVENTO_ASSOCIAR");
-			it.putExtra("nome", txtNome.getText());
-			it.addCategory("BR_FATECSP");
-			startActivityForResult(it, RETORNO);
+			if (params != null) {
+				it = new Intent("EVENTO_ASSOCIAR");
+				it.putExtra("id", idEvento);
+				it.putExtra("nome", params.getString("nome"));
+				it.addCategory("BR_FATECSP");
+				startActivityForResult(it, RETORNO);
+			}
 			break;
 			
 		default:

@@ -1,8 +1,6 @@
 package br.fatec.evento.classes;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.ksoap2.SoapEnvelope;
@@ -32,7 +30,6 @@ public class EventoSOAP {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
-            SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
             SoapObject array = (SoapObject)responseObject.getProperty(0);
             
             for (int i = 0; i < array.getPropertyCount(); i++){
@@ -43,10 +40,10 @@ public class EventoSOAP {
             	e.nome 		   = (String)ret.getPrimitivePropertySafely("Nome");
             	e.local 	   = (String)ret.getPrimitivePropertySafely("Local");
             	e.responsavel  = (String)ret.getPrimitivePropertySafely("Responsavel");
-            	e.inicioEvento = parser.parse((String)ret.getPrimitivePropertySafely("InicioEvento"));
-            	e.fimEvento    = parser.parse((String)ret.getPrimitivePropertySafely("FimEvento"));
+            	e.inicioEvento = (String)ret.getPrimitivePropertySafely("InicioEvento");
+            	e.fimEvento    = (String)ret.getPrimitivePropertySafely("FimEvento");
             	e.status 	   = (String)ret.getPrimitivePropertySafely("Status");
-            	e.tipoEventoId = (Integer)ret.getPrimitivePropertySafely("TipoEventoId");
+            	e.tipoEventoId = Integer.parseInt((String)ret.getPrimitivePropertySafely("TipoEventoId"));
             	result.add(e);
             }
             
@@ -70,20 +67,19 @@ public class EventoSOAP {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
-            SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
             SoapObject array = (SoapObject)responseObject.getProperty(0);
             
             for (int i = 0; i < array.getPropertyCount(); i++){
             	Evento e = new Evento();            	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
-            	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();
-            	e.local 	   = ((SoapPrimitive)ret.getProperty(2)).toString();
-            	e.responsavel  = ((SoapPrimitive)ret.getProperty(3)).toString();
-            	e.inicioEvento = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.fimEvento    = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.status 	   = ((SoapPrimitive)ret.getProperty(4)).toString();
-            	e.tipoEventoId = Integer.parseInt(((SoapPrimitive)ret.getProperty(4)).toString());
+            	e.nome 		   = (String)ret.getPrimitivePropertySafely("Nome");
+            	e.local 	   = (String)ret.getPrimitivePropertySafely("Local");
+            	e.responsavel  = (String)ret.getPrimitivePropertySafely("Responsavel");
+            	e.inicioEvento = (String)ret.getPrimitivePropertySafely("InicioEvento");
+            	e.fimEvento    = (String)ret.getPrimitivePropertySafely("FimEvento");
+            	e.status 	   = (String)ret.getPrimitivePropertySafely("Status");
+            	e.tipoEventoId = (Integer)ret.getPrimitivePropertySafely("TipoEventoId");
             	result.add(e);
             }
             
@@ -107,20 +103,19 @@ public class EventoSOAP {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
-            SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
             SoapObject array = (SoapObject)responseObject.getProperty(0);
             
             for (int i = 0; i < array.getPropertyCount(); i++){
             	Evento e = new Evento();            	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
-            	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();
-            	e.local 	   = ((SoapPrimitive)ret.getProperty(2)).toString();
-            	e.responsavel  = ((SoapPrimitive)ret.getProperty(3)).toString();
-            	e.inicioEvento = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.fimEvento    = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.status 	   = ((SoapPrimitive)ret.getProperty(4)).toString();
-            	e.tipoEventoId = Integer.parseInt(((SoapPrimitive)ret.getProperty(4)).toString());
+            	e.nome 		   = (String)ret.getPrimitivePropertySafely("Nome");
+            	e.local 	   = (String)ret.getPrimitivePropertySafely("Local");
+            	e.responsavel  = (String)ret.getPrimitivePropertySafely("Responsavel");
+            	e.inicioEvento = (String)ret.getPrimitivePropertySafely("InicioEvento");
+            	e.fimEvento    = (String)ret.getPrimitivePropertySafely("FimEvento");
+            	e.status 	   = (String)ret.getPrimitivePropertySafely("Status");
+            	e.tipoEventoId = (Integer)ret.getPrimitivePropertySafely("TipoEventoId");
             	result.add(e);
             }
             
@@ -144,19 +139,18 @@ public class EventoSOAP {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.call(SOAP_ACTION, envelope);
             SoapObject responseObject =(SoapObject)envelope.bodyIn;
-            SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ssZ");
             SoapObject array = (SoapObject)responseObject.getProperty(0);
             for (int i = 0; i < array.getPropertyCount(); i++){
             	Evento e = new Evento();            	
             	SoapObject ret = (SoapObject)array.getProperty(i);
             	e.id 	  	   = Integer.parseInt(((SoapPrimitive)ret.getProperty(0)).toString());
-            	e.nome 		   = ((SoapPrimitive)ret.getProperty(1)).toString();
-            	e.local 	   = ((SoapPrimitive)ret.getProperty(2)).toString();
-            	e.responsavel  = ((SoapPrimitive)ret.getProperty(3)).toString();
-            	e.inicioEvento = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.fimEvento    = parser.parse(((SoapPrimitive)ret.getProperty(4)).toString());
-            	e.status 	   = ((SoapPrimitive)ret.getProperty(4)).toString();
-            	e.tipoEventoId = Integer.parseInt(((SoapPrimitive)ret.getProperty(4)).toString());
+            	e.nome 		   = (String)ret.getPrimitivePropertySafely("Nome");
+            	e.local 	   = (String)ret.getPrimitivePropertySafely("Local");
+            	e.responsavel  = (String)ret.getPrimitivePropertySafely("Responsavel");
+            	e.inicioEvento = (String)ret.getPrimitivePropertySafely("InicioEvento");
+            	e.fimEvento    = (String)ret.getPrimitivePropertySafely("FimEvento");
+            	e.status 	   = (String)ret.getPrimitivePropertySafely("Status");
+            	e.tipoEventoId = (Integer)ret.getPrimitivePropertySafely("TipoEventoId");
             	result.add(e);
             }
             
@@ -166,7 +160,7 @@ public class EventoSOAP {
         }
     }
     
-    public boolean Save(int id, String nome, String local, String responsavel, Date inicioEvento, Date fimEvento, String status, int tipoEventoId) {
+    public boolean Save(int id, String nome, String local, String responsavel, String inicioEvento, String fimEvento, String status, int tipoEventoId) {
     	boolean retorno = false;
     	String METHOD_NAME = "AlterarEvento";
     	String SOAP_ACTION = "http://tempuri.org/AlterarEvento";
@@ -195,7 +189,7 @@ public class EventoSOAP {
     	return retorno;
     }
     
-    public int Add(String nome, String local, String responsavel, Date inicioEvento, Date fimEvento, String status, int tipoEventoId) {
+    public int Add(String nome, String local, String responsavel, String inicioEvento, String fimEvento, String status, int tipoEventoId) {
     	int retorno = 0;
     	String METHOD_NAME = "IncluirEvento";
     	String SOAP_ACTION = "http://tempuri.org/IncluirEvento";
