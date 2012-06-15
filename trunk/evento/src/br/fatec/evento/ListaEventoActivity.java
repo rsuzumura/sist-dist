@@ -78,9 +78,10 @@ public class ListaEventoActivity extends ListActivity implements OnClickListener
 		it.putExtra("nome", evento.nome);
 		it.putExtra("local", evento.local);
 		it.putExtra("responsavel", evento.responsavel);
-		it.putExtra("tipoEventoId", evento.tipoEventoId);
+		it.putExtra("idTipoEvento", evento.tipoEventoId);
 		it.putExtra("inicioEvento", evento.inicioEvento);
 		it.putExtra("fimEvento", evento.fimEvento);
+		it.putExtra("status", evento.status);
 		
 		it.addCategory("BR_FATECSP");
 		startActivity( it );

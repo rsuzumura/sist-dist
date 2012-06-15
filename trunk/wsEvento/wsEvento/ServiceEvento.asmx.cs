@@ -6,6 +6,7 @@ using System.Web.Services;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 
 namespace wsEvento
 {
@@ -374,8 +375,8 @@ namespace wsEvento
             public string Nome { get; set; }
             public string Local { get; set; }
             public string Responsavel { get; set; }
-            public DateTime InicioEvento { get; set; }
-            public DateTime FimEvento { get; set; }
+            public string InicioEvento { get; set; }
+            public string FimEvento { get; set; }
             public string Status { get; set; }
             public int TipoEventoId { get; set; }
         }
@@ -401,8 +402,8 @@ namespace wsEvento
                                 ev.Nome = dr.GetString(1);
                                 ev.Local = dr.GetString(2);
                                 ev.Responsavel = dr.GetString(3);
-                                ev.InicioEvento = dr.GetDateTime(4);
-                                ev.FimEvento = dr.GetDateTime(5);
+                                ev.InicioEvento = (dr.GetDateTime(4)).ToString("dd/MM/yyyy");
+                                ev.FimEvento = (dr.GetDateTime(5)).ToString("dd/MM/yyyy");
                                 ev.Status = dr.GetString(6);
                                 ev.TipoEventoId = dr.GetInt32(7);
                                 result.Add(ev);
@@ -440,8 +441,8 @@ namespace wsEvento
                                 ev.Nome = dr.GetString(1);
                                 ev.Local = dr.GetString(2);
                                 ev.Responsavel = dr.GetString(3);
-                                ev.InicioEvento = dr.GetDateTime(4);
-                                ev.FimEvento = dr.GetDateTime(5);
+                                ev.InicioEvento = (dr.GetDateTime(4)).ToString("dd/MM/yyyy");
+                                ev.FimEvento = (dr.GetDateTime(5)).ToString("dd/MM/yyyy");
                                 ev.Status = dr.GetString(6);
                                 ev.TipoEventoId = dr.GetInt32(7);
                                 result.Add(ev);
@@ -479,8 +480,8 @@ namespace wsEvento
                                 ev.Nome = dr.GetString(1);
                                 ev.Local = dr.GetString(2);
                                 ev.Responsavel = dr.GetString(3);
-                                ev.InicioEvento = dr.GetDateTime(4);
-                                ev.FimEvento = dr.GetDateTime(5);
+                                ev.InicioEvento = (dr.GetDateTime(4)).ToString("dd/MM/yyyy");
+                                ev.FimEvento = (dr.GetDateTime(5)).ToString("dd/MM/yyyy");
                                 ev.Status = dr.GetString(6);
                                 ev.TipoEventoId = dr.GetInt32(7);
                                 result.Add(ev);
@@ -518,8 +519,8 @@ namespace wsEvento
                                 ev.Nome = dr.GetString(1);
                                 ev.Local = dr.GetString(2);
                                 ev.Responsavel = dr.GetString(3);
-                                ev.InicioEvento = dr.GetDateTime(4);
-                                ev.FimEvento = dr.GetDateTime(5);
+                                ev.InicioEvento = (dr.GetDateTime(4)).ToString("dd/MM/yyyy");
+                                ev.FimEvento = (dr.GetDateTime(5)).ToString("dd/MM/yyyy");
                                 ev.Status = dr.GetString(6);
                                 ev.TipoEventoId = dr.GetInt32(7);
                                 result.Add(ev);
@@ -536,10 +537,13 @@ namespace wsEvento
         }
 
         [WebMethod]
-        public int IncluirEvento(string nome, string local, string responsavel, DateTime inicioEvento, DateTime fimEvento, string status, int tipoEventoId)
+        public int IncluirEvento(string nome, string local, string responsavel, string inicioEvento, string fimEvento, string status, int tipoEventoId)
         {
             try
             {
+                CultureInfo culture = new CultureInfo("pt-BR");
+                DateTime dtInicio = Convert.ToDateTime(inicioEvento, culture);
+                DateTime dtFim = Convert.ToDateTime(fimEvento, culture);
                 using (MySqlConnection cn = new MySqlConnection(ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString))
                 {
                     int result = 0;
@@ -550,8 +554,8 @@ namespace wsEvento
                         cmd.Parameters.AddWithValue("WEVEN_NOME", nome);
                         cmd.Parameters.AddWithValue("WEVEN_LOCAL", local);
                         cmd.Parameters.AddWithValue("WEVEN_RESPONSAVEL", responsavel);
-                        cmd.Parameters.AddWithValue("WEVEN_INICIO", inicioEvento);
-                        cmd.Parameters.AddWithValue("WEVEN_FIM", fimEvento);
+                        cmd.Parameters.AddWithValue("WEVEN_INICIO", dtInicio);
+                        cmd.Parameters.AddWithValue("WEVEN_FIM", dtFim);
                         cmd.Parameters.AddWithValue("WEVEN_STATUS", status);
                         cmd.Parameters.AddWithValue("WEVEN_TPEV_ID", tipoEventoId);
                         result = Convert.ToInt32(cmd.ExecuteScalar());
@@ -566,10 +570,14 @@ namespace wsEvento
         }
 
         [WebMethod]
-        public bool AlterarEvento(int id, string nome, string local, string responsavel, DateTime inicioEvento, DateTime fimEvento, string status, int tipoEventoId)
+        public bool AlterarEvento(int id, string nome, string local, string responsavel, string inicioEvento, string fimEvento, string status, int tipoEventoId)
         {
             try
             {
+                CultureInfo culture = new CultureInfo("pt-BR");
+                DateTime dtInicio = Convert.ToDateTime(inicioEvento, culture);
+                DateTime dtFim = Convert.ToDateTime(fimEvento, culture);
+
                 using (MySqlConnection cn = new MySqlConnection(ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString))
                 {
                     cn.Open();
@@ -580,8 +588,8 @@ namespace wsEvento
                         cmd.Parameters.AddWithValue("WEVEN_NOME", nome);
                         cmd.Parameters.AddWithValue("WEVEN_LOCAL", local);
                         cmd.Parameters.AddWithValue("WEVEN_RESPONSAVEL", responsavel);
-                        cmd.Parameters.AddWithValue("WEVEN_INICIO", inicioEvento);
-                        cmd.Parameters.AddWithValue("WEVEN_FIM", fimEvento);
+                        cmd.Parameters.AddWithValue("WEVEN_INICIO", dtInicio);
+                        cmd.Parameters.AddWithValue("WEVEN_FIM", dtFim);
                         cmd.Parameters.AddWithValue("WEVEN_STATUS", status);
                         cmd.Parameters.AddWithValue("WEVEN_TPEV_ID", tipoEventoId);
                         cmd.ExecuteNonQuery();
