@@ -1,0 +1,1 @@
+Trabalho pela FATEC-SP, de consumo de webservice desenvolvido em .NET, utilizando base de dados MySQL, através de uma aplicação Android.
